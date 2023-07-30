@@ -1,0 +1,16 @@
+<div class="post-list">
+  {{#each posts}}
+  <div class="post-card">
+    <h2 class="post-title">
+      <a href="/view/{{id}}">{{title}}</a>
+    </h2>
+    <div class="post-info">
+      <p class="post-author">Posted by: {{User.username}}</p>
+      <p class="post-date">Posted on: {{format_date createdAt}}</p>
+    </div>
+    <div class="post-content">
+      {{body}}
+    </div>
+  </div>
+  {{/each}}
+</div>

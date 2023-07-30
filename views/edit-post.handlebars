@@ -1,0 +1,20 @@
+<div class="custom-post custom-card">
+  <div class="custom-card-header">
+    <h2>Edit Post</h2>
+  </div>
+  <form id="custom-edit-post-form" class="custom-card-body">
+    <input type="hidden" name="custom-post-id" value="{{custom-post.id}}" />
+
+    <label class="custom-form-label" for="custom-post-title">Title</label>
+    <input type="text" name="custom-post-title" value="{{custom-post.title}}" class="custom-form-input" />
+
+    <label class="custom-form-label" for="custom-post-body">Content</label>
+    <textarea name="custom-post-body" class="custom-form-input">{{custom-post.body}}</textarea>
+
+    <button type="submit" class="custom-btn">Update</button>
+
+    <button type="button" id="custom-delete-btn" class="custom-btn">Delete</button>
+  </form>
+</div>
+
+<script src="/public/js/custom-edit.js"></script>

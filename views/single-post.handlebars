@@ -1,0 +1,52 @@
+<div class="custom-post">
+  <article class="custom-card">
+    <div class="custom-card-header custom-flex-row custom-justify-space-between">
+      <h2>{{post.title}}</h2>
+      <div>
+        Posted by {{post.User.username}} on {{custom_format_date post.createdAt}}
+      </div>
+    </div>
+    <div class="custom-card-body">
+      {{post.body}}
+    </div>
+  </article>
+
+  {{#if post.Comments}}
+    <section class="custom-card">
+      <div class="custom-card-header">
+        <h3>Comments</h3>
+      </div>
+
+      <div class="custom-card-body">
+        {{#each post.Comments}}
+          <div>
+            <p>
+              {{body}}
+            </p>
+            <p>
+              &mdash; {{User.username}}, {{custom_format_date createdAt}}
+            </p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}}
+
+  <form id="custom-new-comment-form" class="custom-card">
+    <div class="custom-card-header">
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="custom-card-body">
+      <input type="hidden" name="custom-post-id" value="{{post.id}}" />
+
+      <label class="custom-form-label" for="custom-comment-body">Comment</label>
+
+      <textarea name="custom-comment-body" class="custom-form-input"></textarea>
+
+      <button type="submit" class="custom-btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="/public/js/custom-comment.js"></script>
